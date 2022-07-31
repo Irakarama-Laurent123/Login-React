@@ -44,15 +44,15 @@ const Login = (props) => {
   const { isValid: emailIsValid } = emailState;
   const { isValid: passwordIsValid } = passwordState;
 
-  // useEffect(() => {
-  //   const identifier = setTimeout(() => {
-  //     console.log("Checking Form Validity");
-  //     setFormIsValid(emailState.isValid && passwordState.isValid);
-  //   }, 1000);
-  //   return () => {
-  //     clearTimeout(identifier);
-  //   };
-  // }, [emailIsValid, passwordIsValid]);
+  useEffect(() => {
+    const identifier = setTimeout(() => {
+      console.log("Checking Form Validity");
+      setFormIsValid(emailState.isValid && passwordState.isValid);
+    }, 1000);
+    return () => {
+      clearTimeout(identifier);
+    };
+  }, [emailIsValid, passwordIsValid]);
 
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: "USER_INPUT", val: event.target.value });

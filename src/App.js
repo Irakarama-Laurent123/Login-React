@@ -14,13 +14,13 @@ function App() {
     setIsLoggedIn(true);
   };
 
-  // useEffect(() => {
-  //   const storedInfo = localStorage.getItem("isLoggedIn");
-  //
-  //   if (storedInfo === "1") {
-  //     setIsLoggedIn(true);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const storedInfo = localStorage.getItem("isLoggedIn");
+
+    if (storedInfo === "1") {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const logoutHandler = () => {
     localStorage.removeItem("isLoggedIn");
